@@ -1,23 +1,3 @@
-ctp
-===
-ctp ineterface of golang (for linux64)
-http://www.citicsf.com/download/ctp/
-
-
-=================preparing=====================
-
-install go
-install swig
-
-
-=================build package=================
-
-export GOROOT=<your go root path>
-cd ./src
-./make.sh
-
-
-=================how to use=================
 package main
 
 import (
@@ -34,7 +14,6 @@ type TradeApi struct {
 	ctp.ThostFtdcTraderSpiImplBase
 }
 
-//callback from c++ libararys
 func (g *TradeApi) OnFrontConnected() {
 	fmt.Printf("connected\n")
 }
@@ -46,13 +25,3 @@ func main() {
 	api.Init()
 	api.Join()
 }
-
-
-=================more=================
-
-i need a public account to test...
-
-
-
-
-
