@@ -23,7 +23,7 @@ cp ../ctp.swig ./
 swig -go -c++ -intgosize 64 -soname libctp.so ./ctp.swig
 $CC $CXXFLAGS -I../c++/ -I../helper/ -fpic -c ctp_wrap.cxx -o ctp_wrap.o
 $CC $CXXFLAGS -I../helper/ -fpic -c ../helper/helper.cpp -o helper.o
-$CC $LDFLAGS /usr/lib/thostmduserapi.so /usr/lib/thosttraderapi.so -shared -o libctp.so ctp_wrap.o helper.o
+$CC $LDFLAGS -shared -o libctp.so ctp_wrap.o helper.o /usr/lib/thostmduserapi.so /usr/lib/thosttraderapi.so
 cp ./libctp.so /usr/lib/
 
 
